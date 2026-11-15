@@ -20,9 +20,8 @@
     <div>
       <h1 class="head">Scientific file formats, in pure Go.<br><span class="accent">Planned: nothing is released yet.</span></h1>
       <p class="sub">go-sciio is the organisation the <a href="https://github.com/go-scikit/roadmap/blob/main/PLAN.md">go-scikit plan</a> names for what MATLAB's file functions and Mathematica's <code>Import</code> read and write: <b>HDF5</b>, <b>MAT</b>, <b>NetCDF</b>, <b>FITS</b>, <b>npy</b>, <b>Matrix Market</b>, <b>WAV</b> and <b>FLAC</b>. It is wave 2 of the plan; no library and no code exist yet.</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="https://go-sciio.github.io/docs/">{{ partial "icons/book.html" . }}Read the documentation →</a>
-      </div>
+      {{/* [[params.cta]] in hugo.toml: the kit renders the row */}}
+      {{ partial "cta.html" . }}
       <div class="trust"><span><b>planned</b> wave 2</span><span><b>8</b> packages in the plan</span><span><b>0</b> releases</span></div>
     </div>
     <div class="term">
@@ -51,7 +50,7 @@ plan     github.com/go-scikit/roadmap
       <div class="card"><div class="ico">🔢</div><h3>npy and Matrix Market</h3><p>NumPy <code>.npy</code> and <code>.npz</code>; Matrix Market coordinate and array files.</p></div>
       <div class="card"><div class="ico">🎧</div><h3>Audio</h3><p>WAV, and FLAC decoding (RFC 9639).</p></div>
       <div class="card"><div class="ico">🛡️</div><h3>Hostile input</h3><p>Fuzzing and a limit on the allocation a header can ask for, in line with the fleet's decompression-bomb standard.</p></div>
-      <div class="card"><div class="ico">📦</div><h3>Pure Go, CGO=0</h3><p>No cgo on any architecture the fleet's CI tests. The C libraries are oracles, never dependencies.</p></div>
+      {{ if not (partial "mantra-on.html" $) }}<div class="card"><div class="ico">📦</div><h3>Pure Go, CGO=0</h3><p>No cgo on any architecture the fleet's CI tests. The C libraries are oracles, never dependencies.</p></div>{{ end }}
     </div>
   </div></section>
 
@@ -101,6 +100,6 @@ plan     github.com/go-scikit/roadmap
     </div>
   </div></section>
 
-  <footer><div class="wrap"><span>go-sciio · <a href="https://github.com/go-sciio">go-sciio on GitHub</a> · BSD-3-Clause</span><span>every byte · read right</span></div></footer>
+  <footer><div class="wrap"><span>go-sciio · <a href="https://github.com/go-sciio">go-sciio on GitHub</a>{{ if not (partial "mantra-on.html" $) }} · BSD-3-Clause{{ end }}</span><span>every byte · read right</span></div></footer>
 </body>
 </html>

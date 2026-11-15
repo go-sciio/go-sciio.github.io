@@ -98,3 +98,9 @@ disableKinds = ['taxonomy', 'term', 'rss', 'sitemap', '404']
   chipFgDark = "#c1ccdc"
   statsEnd = "#e4e9f0"
   bandText = "#edf0f5"
+
+# The hero's buttons, rendered by landingkit's cta.html in the kit's order.
+[[params.cta]]
+  kind  = "docs"
+  href  = "https://go-sciio.github.io/docs/"
+  label = "Read the documentation →"
